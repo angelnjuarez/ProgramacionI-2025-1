@@ -75,7 +75,7 @@ public class IntroEje {
 			n = n / 10;
 			cont++;
 		}
-		// System.out.println(cont);
+		System.out.println(cont);
 
 		// Cantidad de caracteres de res
 		// System.out.println(res.length());
