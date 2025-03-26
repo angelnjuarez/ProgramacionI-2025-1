@@ -1,4 +1,4 @@
-package clase5RecursionAux;
+package clase5RecursionString;
 
 public class RecNumeros {
 

@@ -1,4 +1,4 @@
-package clase5RecursionAux;
+package clase5RecursionString;
 
 public class Test {
 
@@ -10,7 +10,8 @@ public class Test {
 		//System.out.println(RecString.intercalarAst("hola"));
 		//System.out.println(RecString.sinRepetidosConsecutivos("gggeeeeeuddddduu"));
 		//System.out.println(RecString.longitud("gggeeeeeuddddduu"));
-		
+		//System.out.println(RecString.reverso("hola"));
+		System.out.println(RecString.combinar("calor", "temperatura"));
 	}
 
 }
