@@ -1,7 +1,7 @@
 package clase8y9ClaseFecha;
 
 public class Fecha {
-	int dia;
+	private int dia;
 	int mes;
 	int anio;
 
@@ -112,4 +112,41 @@ public class Fecha {
 	public boolean antesQue(Fecha otra) {
 		return this.numSerie() < otra.numSerie();
 	}
+	
+	public int getDia() {
+		return this.dia;
+	}
+	
+	public void setDia(int d) {
+		if(d<1 || d>diasDelMes())
+			throw new RuntimeException("El dia es invalido para" + this);
+		this.dia = d;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

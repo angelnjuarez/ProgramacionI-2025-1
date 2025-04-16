@@ -1,4 +1,4 @@
-package clase3ArreglosStrings;
+package clase03ArreglosStrings;
 
 public class IntroEje {
 
