@@ -1,4 +1,4 @@
-package clase6RecursionCierre;
+package clase06RecursionCierre;
 
 public class RecArreglos {
 

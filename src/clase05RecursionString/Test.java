@@ -1,4 +1,4 @@
-package clase5RecursionString;
+package clase05RecursionString;
 
 public class Test {
 

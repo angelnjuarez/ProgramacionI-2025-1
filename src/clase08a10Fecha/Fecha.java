@@ -1,9 +1,16 @@
-package clase8y9ClaseFecha;
+package clase08a10Fecha;
 
 public class Fecha {
+
+	/*
+	 * IREP (Invariante de Representación)
+	 * 1<= mes <=12 
+	 * 1<= dia <= diasDelMes(dia,anio)
+	 */
+
 	private int dia;
-	int mes;
-	int anio;
+	private int mes;
+	private int anio;
 
 	public Fecha(int d, int m, int a) {
 		this.dia = d;
@@ -20,7 +27,10 @@ public class Fecha {
 	}
 
 	public void imprimir() {
-		System.out.println(this.dia + "/" + this.mes + "/" + this.anio);
+		String[] nomMes = { "", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
+				"Octubre", "Noviembre", "Diciembre" };
+
+		System.out.println(this.dia + " de " + nomMes[this.mes] + " de " + this.anio);
 	}
 
 	static boolean esBisiesto(int anio) {
@@ -69,8 +79,7 @@ public class Fecha {
 		}
 		this.mes++;
 	}
-	
-	
+
 	public boolean antesQueI(Fecha otra) {
 		if (this.anio > otra.anio) {
 			return false;
@@ -112,14 +121,14 @@ public class Fecha {
 	public boolean antesQue(Fecha otra) {
 		return this.numSerie() < otra.numSerie();
 	}
-	
+
 	public int getDia() {
 		return this.dia;
 	}
-	
+
 	public void setDia(int d) {
-		if(d<1 || d>diasDelMes())
-			throw new RuntimeException("El dia es invalido para" + this);
+		if (d < 1 || d > diasDelMes())
+			throw new RuntimeException(d + " no es un día válido");
 		this.dia = d;
 	}
 
@@ -128,6 +137,8 @@ public class Fecha {
 	}
 
 	public void setMes(int mes) {
+		if (mes < 1 || mes > 12)
+			throw new RuntimeException(mes + "no es un mes válido");
 		this.mes = mes;
 	}
 
@@ -136,17 +147,9 @@ public class Fecha {
 	}
 
 	public void setAnio(int anio) {
+		if (anio < 1900)
+			throw new RuntimeException(anio + "no es un año válido");
 		this.anio = anio;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

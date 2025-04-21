@@ -1,7 +1,13 @@
-package clase10Excepciones;
+package clase10ExceptArrObj;
 
 public class Mazo {
 	private Carta[] cartas;
+	/*
+	 * IREP:
+	 * - cartas.length == 40
+	 * - No hay cartas nulas
+	 * - No hay cartas repetidas
+	 */
 
 	public Mazo() {
 		this.cartas = new Carta[40];

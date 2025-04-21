@@ -1,4 +1,4 @@
-package clase7Objetos;
+package clase07Objetos;
 
 import java.awt.*;
 

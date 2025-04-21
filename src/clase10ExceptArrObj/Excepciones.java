@@ -1,4 +1,4 @@
-package clase10Excepciones;
+package clase10ExceptArrObj;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -7,7 +7,6 @@ public class Excepciones {
 
 	public static void main(String[] args) {
 		String abc = "abcdefghijklmñnopqrstuvwxyz";
-
 		boolean ok = false;
 		while (!ok) {
 			try {
@@ -24,15 +23,8 @@ public class Excepciones {
 			} catch (Exception ex) {
 				System.out.print("Se produjo el siguiente error: " + ex.getMessage());
 			} finally {
-				
+				System.out.println("Siempre ingreso acá");
 			}
-			
-			
-			
-			
-			
-			
-			
 
 		}
 		System.out.println("llegué acá");

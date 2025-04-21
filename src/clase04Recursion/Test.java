@@ -1,4 +1,4 @@
-package clase4Recursion;
+package clase04Recursion;
 
 public class Test {
 

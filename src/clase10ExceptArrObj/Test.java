@@ -1,4 +1,4 @@
-package clase10Excepciones;
+package clase10ExceptArrObj;
 
 public class Test {
 	
