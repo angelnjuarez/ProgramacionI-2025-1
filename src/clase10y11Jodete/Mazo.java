@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Mazo {
 	private Carta[] cartas;
+	int cantCartas;
 	/*
 	 * IREP: - cartas.length == 40 - No hay cartas nulas - No hay cartas repetidas
 	 */
@@ -21,6 +22,7 @@ public class Mazo {
 				j++;
 			}
 		}
+		this.cantCartas = 40;
 	}
 
 	public void mezclar() {
@@ -33,15 +35,22 @@ public class Mazo {
 			cartas[pos2] = aux;
 		}
 	}
-	
+
 	public void mostrar() {
-		for (int i = 0; i < 40; i++) {
+		for (int i = 0; i < this.cantCartas; i++) {
 			System.out.println(cartas[i]);
 		}
 	}
 
 	public int cantCartas() {
-		return 40;
+		return this.cantCartas;
+	}
+
+	public Carta devolverCarta() {
+		Carta aux = cartas[this.cantCartas - 1];
+		cartas[this.cantCartas - 1] = null;
+		this.cantCartas--;
+		return aux;
 	}
 
 }

@@ -14,4 +14,9 @@ public class Carta {
 		this.palo = palo;
 		this.numero =  numero;
 	}
+	
+	public String toString() {
+		String[] palos = {"espada", "copa", "basto", "oro"};
+ 		return this.numero + " de " + palos[this.palo];
+	}
 }
