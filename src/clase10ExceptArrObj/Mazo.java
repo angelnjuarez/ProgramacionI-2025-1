@@ -1,12 +1,11 @@
 package clase10ExceptArrObj;
 
+import java.util.Random;
+
 public class Mazo {
 	private Carta[] cartas;
 	/*
-	 * IREP:
-	 * - cartas.length == 40
-	 * - No hay cartas nulas
-	 * - No hay cartas repetidas
+	 * IREP: - cartas.length == 40 - No hay cartas nulas - No hay cartas repetidas
 	 */
 
 	public Mazo() {
@@ -23,7 +22,24 @@ public class Mazo {
 			}
 		}
 	}
+
+	public void mezclar() {
+		Random r = new Random();
+		for (int i = 0; i < 4000; i++) {
+			int pos1 = r.nextInt(40);
+			int pos2 = r.nextInt(40);
+			Carta aux = cartas[pos1];
+			cartas[pos1] = cartas[pos2];
+			cartas[pos2] = aux;
+		}
+	}
 	
+	public void mostrar() {
+		for (int i = 0; i < 40; i++) {
+			System.out.println(cartas[i]);
+		}
+	}
+
 	public int cantCartas() {
 		return 40;
 	}
