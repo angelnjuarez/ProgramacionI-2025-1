@@ -1,8 +1,8 @@
-package clase10y11Jodete;
+package clase10a12Jodete;
 
 public class Mano {
 	Carta[] cartas;
-	int cantCartas;
+	private int cantCartas;
 
 	/*
 	 * IREP -Las cartas no se repiten -
@@ -14,7 +14,7 @@ public class Mano {
 
 	public void mostrar() {
 		for (int i = 0; i < this.cantCartas; i++) {
-			System.out.println(cartas[i]);
+			System.out.println(i + ": " + cartas[i]);
 		}
 	}
 
@@ -34,8 +34,8 @@ public class Mano {
 	public int cantidadDeCartas() {
 		return this.cantCartas;
 	}
-	
-	
-	
 
+	public int cantCartas() {
+		return this.cantCartas;
+	}
 }

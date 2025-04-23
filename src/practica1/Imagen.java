@@ -10,20 +10,17 @@ public class Imagen {
 	Pixel[][] pixels;
 	int alto;
 	int ancho;
-	
-	Imagen(String archivo)
-	{
-		File file= new File(archivo);
+
+	Imagen(String archivo) {
+		File file = new File(archivo);
 		try {
 			BufferedImage image = ImageIO.read(file);
 			ancho = image.getWidth();
 			alto = image.getHeight();
 			pixels = new Pixel[alto][ancho];
-			for(int i=0; i<alto; i++)
-			{
-				for(int j=0; j<ancho; j++)
-				{
-					pixels[i][j]=new Pixel(image.getRGB(j, i));
+			for (int i = 0; i < alto; i++) {
+				for (int j = 0; j < ancho; j++) {
+					pixels[i][j] = new Pixel(image.getRGB(j, i));
 				}
 			}
 		} catch (IOException e) {
@@ -32,21 +29,19 @@ public class Imagen {
 		}
 	}
 
-
 	/**
 	 * Guarda la imagen en un archivo seg�n el formato indicado
+	 * 
 	 * @param archivo El nombre de archivo, e.g., "lena.bmp"
-	 * @param formato El formato de imagen: "bmp", "png", "jpg", etc. 
+	 * @param formato El formato de imagen: "bmp", "png", "jpg", etc.
 	 */
-	void guardar(String archivo, String formato)
-	{
+	void guardar(String archivo, String formato) {
 		BufferedImage image = new BufferedImage(ancho, alto, BufferedImage.TYPE_INT_RGB);
-		for(int i=0; i<alto; i++)
-		{
-			for(int j=0; j<ancho; j++)
-				image.setRGB(j,i, pixels[i][j].aInt());
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++)
+				image.setRGB(j, i, pixels[i][j].aInt());
 		}
-		
+
 		try {
 			ImageIO.write(image, formato, new File(archivo));
 		} catch (IOException e) {
@@ -54,5 +49,62 @@ public class Imagen {
 			e.printStackTrace();
 		}
 	}
-	
+
+	void enrojecer(int cant) {
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++) {
+				pixels[i][j].enrojecer(cant);
+			}
+		}
+	}
+
+	void abrillantar(int cant) {
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++) {
+				pixels[i][j].abrillantar(cant);
+			}
+		}
+	}
+
+	void aGrises() {
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++) {
+				pixels[i][j].aGrises();
+			}
+		}
+	}
+
+	void invertir() {
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++) {
+				pixels[i][j].invertir();
+			}
+		}
+	}
+
+	public void espejar() {
+		Pixel[][] p = new Pixel[alto][ancho];
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++) {
+				p[i][j] = pixels[i][(ancho - 1) - j];
+			}
+		}
+		this.pixels = p;
+	}
+
+	public void girarDerecha() {
+		int ancho = this.alto;
+		int alto = this.ancho;
+		Pixel[][] p = new Pixel[alto][ancho];
+		for (int i = 0; i < alto; i++) {
+			for (int j = 0; j < ancho; j++) {
+				p[i][j] = pixels[j][i];
+			}
+		}
+		this.pixels = p;
+		this.alto = alto;
+		this.ancho = ancho;
+
+	}
+
 }

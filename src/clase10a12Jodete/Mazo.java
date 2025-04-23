@@ -1,4 +1,4 @@
-package clase10y11Jodete;
+package clase10a12Jodete;
 
 import java.util.Random;
 
@@ -6,7 +6,9 @@ public class Mazo {
 	private Carta[] cartas;
 	int cantCartas;
 	/*
-	 * IREP: - cartas.length == 40 - No hay cartas nulas - No hay cartas repetidas
+	 * IREP: - cartas.length == 40
+	 * - No hay cartas nulas
+	 * - No hay cartas repetidas
 	 */
 
 	public Mazo() {
