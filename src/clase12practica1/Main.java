@@ -1,4 +1,4 @@
-package practica1;
+package clase12practica1;
 
 public class Main {
 
