@@ -1,4 +1,4 @@
-// PARCIAL Recuperatorio (turno ma˜nana) – 12/06/2023
+// PARCIAL Recuperatorio (turno maniana) – 12/06/2023
 
 
 	/*
