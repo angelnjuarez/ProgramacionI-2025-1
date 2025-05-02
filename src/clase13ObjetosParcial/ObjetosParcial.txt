@@ -1,0 +1,65 @@
+// PARCIAL Recuperatorio (turno ma˜nana) – 12/06/2023
+
+
+	/*
+	 * Ejercicio B
+	 */
+	public int subscriptoresQueVieronSeriesLargas(){
+		int cant = 0;
+		for(Plan p : this.planes){
+			for(Subscriptor sub : p.subscriptores){
+				if(vioSerieLarga(sub.seriesVistas)){
+					cant++;
+					
+				}
+			}
+		}
+		return cant;
+	}
+
+	private boolean vioSerieLarga(Serie[] series){
+		for(Serie s : series){
+			if(s.cantidadDeTemporadas > 4){
+				return true;		
+			}
+		}
+		return false;
+	}
+
+
+
+	/*
+	 * Ejercicio C
+	 */
+
+	//Clase Notflix
+	public Episodio episodioMasVisto(){
+		Episodio masVisto = this.planes[0].subscriptores[0].episodiosVistos[0];
+		int cantMax = cantVizualizaciones(masVisto);
+		for(Plan p : this.planes){
+			for(Subscriptor sub : p.subscriptores){
+				for(Episodio ep: sub.episodiosVistos){
+					int cant = cantVizualizaciones(ep);
+					if(cant > cantMax){
+						masVisto = ep;
+						cantMax = cant;
+					}
+				}
+			}
+		}
+		return masVisto;
+	}
+	
+	private int cantVizualizaciones(Episodio e){
+		int cont = 0;
+		for(Plan p : this.planes){
+			for(Subscriptor sub : p.subscriptores){
+				for(Episodio ep: sub.episodiosVistos){
+					if(ep.equals(e)){
+						cont++;
+					}
+				}
+			}
+		}
+		return cont;	
+	}

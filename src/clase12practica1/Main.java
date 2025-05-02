@@ -7,8 +7,12 @@ public class Main {
 	 */
 	public static void main(String[] args) 
 	{
-		Fraccion f = new Fraccion(8,32);
-		f.imprimir();
+		Imagen lena = new Imagen("src/assets/lena.bmp");
+		lena.enrojecer(100);
+		Dibujador.dibujar(lena);
+		lena.girarDerecha();
+		Dibujador.dibujar(lena);
+		
 	}
 
 }

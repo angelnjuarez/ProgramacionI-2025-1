@@ -95,10 +95,10 @@ public class Imagen {
 	public void girarDerecha() {
 		int nuevoAncho = this.alto;
 		int nuevoAlto = this.ancho;
-		Pixel[][] p = new Pixel[alto][ancho];
+		Pixel[][] p = new Pixel[nuevoAlto][nuevoAncho];
 		for (int i = 0; i < alto; i++) {
 			for (int j = 0; j < ancho; j++) {
-				p[i][this.alto - 1 - i] = pixels[j][i];
+				p[j][this.alto - 1 - i] = pixels[i][j];
 			}
 		}
 		this.pixels = p;
