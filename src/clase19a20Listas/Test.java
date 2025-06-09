@@ -3,8 +3,16 @@ package clase19a20Listas;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		ListaInt lista = new ListaInt();
+		lista.agregarAdelante(4);
+		lista.agregarAtras(3);
+		lista.agregarAtras(1);
+		lista.agregarAtras(3);
+		lista.agregarAtras(5);
 
+		lista.imprimir();
+		lista.extraerConsecutivos2().imprimir();
+		lista.imprimir();
 	}
 
 }
