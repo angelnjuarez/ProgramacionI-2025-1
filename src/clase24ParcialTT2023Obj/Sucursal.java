@@ -1,4 +1,4 @@
-package clase24ParcialTurnoTarde22023;
+package clase24ParcialTT2023Obj;
 
 public class Sucursal {
 	String nombreID;
