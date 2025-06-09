@@ -1,4 +1,4 @@
-package clase19a20Listas;
+package clase19a22Listas;
 
 public class NodoInt {
   int elemento;
