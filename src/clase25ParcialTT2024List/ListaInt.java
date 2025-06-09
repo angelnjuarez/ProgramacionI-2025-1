@@ -1,4 +1,4 @@
-package clase25ParcialTM2019List;
+package clase25ParcialTT2024List;
 
 public class ListaInt {
 	NodoInt primero;
@@ -30,20 +30,17 @@ public class ListaInt {
 		actual.siguiente = nuevo;
 	}
 
-	public void filtrarElementosEnRango(int k, int m) {
-		if (this.primero == null) {
-			return;
-		}
+	public void descomponerPares() {
 		NodoInt actual = this.primero;
-		while (actual.siguiente != null) {
-			if (actual.siguiente.elemento > k && actual.siguiente.elemento < m) {
-				actual = actual.siguiente;
-			} else {
-				actual.siguiente = actual.siguiente.siguiente;
+		while (actual != null) {
+			if (actual.elemento % 2 == 0) {
+				NodoInt nuevo = new NodoInt(actual.elemento * 2);
+				actual.elemento = actual.elemento / 2;
+				nuevo.siguiente = actual.siguiente;
+				actual.siguiente = nuevo;
+				actual = nuevo; // Puede ser acutal = actual.siguiente
 			}
-		}
-		if (!(this.primero.elemento > k && this.primero.elemento < m)) {
-			this.primero = this.primero.siguiente;
+			actual = actual.siguiente;
 		}
 	}
 
